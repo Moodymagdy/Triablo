@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 export default function Home() {
   const [backgroundImage, setBackgroundImage] = useState(0);
 
+
   const backgroundImages = [
     `${process.env.PUBLIC_URL}/img1.jpg`,
     `${process.env.PUBLIC_URL}/img2.jpg`,
