@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Home() {
   const [backgroundImage, setBackgroundImage] = useState(0);
@@ -31,6 +31,15 @@ export default function Home() {
       prevIndex === 0 ? backgroundImages.length - 1 : prevIndex - 1
     );
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // Change to the next background image
+      setBackgroundImage((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 5000); // 10000 milliseconds = 10 seconds
+
+    return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+  }, [backgroundImage, backgroundImages]);
 
   return (
     <>
