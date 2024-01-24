@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Products() {
-  return (
-    <div></div>
-  )
+  return <>
+  <h2>Moody</h2>
+  </>
 }
