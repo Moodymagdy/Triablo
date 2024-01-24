@@ -81,7 +81,7 @@ export default function Home() {
           style={{ backgroundColor: '#123', color: '#fff' }}
           onClick={handleNextImage}
         >
-          hello
+          hello world
            &gt;
         </button>
       </div>
