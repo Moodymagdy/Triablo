@@ -21,6 +21,8 @@ export default function Home() {
     justifyContent: 'center',
     padding: '20px',
     borderRadius: '10px',
+    
+    
   };
 
   const handleNextImage = () => {
