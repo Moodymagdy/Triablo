@@ -1,7 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-export default function Products() {
-  return <>
-  <h2>Moody</h2>
-  </>
+function BasicExample() {
+  const cardData = [
+    { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 900', currentPrice: 'EGP 700', rating: 4.5, imageSrc: './hotel.jpg' },
+    { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 800', currentPrice: 'EGP 650', rating: 4.2, imageSrc: './hotel.jpg' },
+    { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 700', currentPrice: 'EGP 600', rating: 3.5, imageSrc: './hotel.jpg' },
+    { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 600', currentPrice: 'EGP 500', rating: 4.8, imageSrc: './hotel.jpg' },
+  ];
+
+  const [isHeartClicked, setIsHeartClicked] = useState(false);
+
+  const toggleHeartColor = () => {
+    setIsHeartClicked((prev) => !prev);
+  };
+
+  return (
+    <section id='prod'>
+      <div className='prod-header'>
+        <h1 className='text-center'>Our Products</h1>
+      </div>
+      <div className="container">
+        <div className="row">
+          {cardData.map((card, index) => (
+            <div key={index} className="col-3">
+              <div className="card" style={{ position: 'relative' }}>
+                <button style={{ position: 'absolute', top: '5px', left: '5px', background: 'transparent', border: 'none', fontSize: '1.2rem', color: isHeartClicked ? 'red' : 'white' }} >   &#10084;  </button>
+                <div className="rating-badge" style={{ position: 'absolute', top: '5px', right: '5px', background: 'orange', color: 'white', padding: '3px', borderRadius: '5px' }}>
+                  {card.rating}
+                </div>
+                <img src={card.imageSrc} className="card-img-top rounded" alt={`Image for ${card.title}`} />
+                <div className="card-body d-flex flex-column justify-content-between text-left">
+                  <div>
+                    <h5 className="card-title" style={{ color: 'orange', fontWeight: 'bold', fontSize: '0.8rem', lineHeight: '1' }}>{card.title}</h5>
+                    <p className="card-text" style={{ fontWeight: 'bold', fontSize: '0.7rem', lineHeight: '0' }}>{card.location}</p>
+                    <p className="card-text" style={{ fontWeight: 'bold', fontSize: '0.7rem', lineHeight: '0' }}>{card.duration}</p>
+                    <p className="card-text" style={{ fontWeight: 'bold', fontSize: '0.7rem', lineHeight: '0' }}>{card.date}</p>
+                    <div style={{ background: 'transparent', marginBottom: '5px' }}>
+                    </div>
+                  </div>
+                  <div style={{ background: 'orange', padding: '10px', borderRadius: '0 0 15px 15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
+                    <div style={{ background: 'transparent', marginBottom: '5px' }}>
+                      <p className="card-text" style={{ fontWeight: 'bold', fontSize: '0.7rem', lineHeight: '2' }}>
+                        <del>{card.discountedPrice}</del> {card.currentPrice}
+                      </p>
+                    </div>
+                    <a href="#" className="btn text-white" style={{ fontSize: '0.7rem' }}>
+                      Book Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
+
+export default BasicExample;
