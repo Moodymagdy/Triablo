@@ -20,15 +20,17 @@ function BasicExample() {
         <h1 className='text-center'>Our Products</h1>
       </div>
       <div className="container">
-        <div className="row">
+        <div className="row" style={{margin:'70px'}}>
           {cardData.map((card, index) => (
-            <div key={index} className="col-3">
-              <div className="card" style={{ position: 'relative' }}>
-                <button style={{ position: 'absolute', top: '5px', left: '5px', background: 'transparent', border: 'none', fontSize: '1.2rem', color: isHeartClicked ? 'red' : 'white' }} >   &#10084;  </button>
-                <div className="rating-badge" style={{ position: 'absolute', top: '5px', right: '5px', background: 'orange', color: 'white', padding: '3px', borderRadius: '5px' }}>
+            <div key={index} className="col-3" >
+              <div className="card" style={{ position: 'relative', borderRadius: '60px', width:'230px',height:'320px' }}>
+                <button style={{ position: 'absolute', top: '5px', left: '7px', background: 'transparent', border: 'none', fontSize: '1.2rem', color: isHeartClicked ? 'red' : 'white' }} >   &#10084;  </button>
+                <div className="rating-badge" style={{ position: 'absolute', top: '5px', right: '20px', background: 'orange', color: 'white', padding: '0px', borderRadius: '5px' }}>
                   {card.rating}
                 </div>
-                <img src={card.imageSrc} className="card-img-top rounded" alt={`Image for ${card.title}`} />
+                <div className="card-img-wrapper" style={{ overflow: 'hidden', borderRadius: '40px 40px 0 0' }}>
+                  <img src={card.imageSrc} className="card-img-top rounded" alt={`Image for ${card.title}`} />
+                </div>
                 <div className="card-body d-flex flex-column justify-content-between text-left">
                   <div>
                     <h5 className="card-title" style={{ color: 'orange', fontWeight: 'bold', fontSize: '0.8rem', lineHeight: '1' }}>{card.title}</h5>
