@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function BasicExample() {
   const cardData = [
-    { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2022 to 29 Dec 2023', discountedPrice: 'EGP 900', currentPrice: 'EGP 700', rating: 4.5, imageSrc: './hotel.jpg' },
+    { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 900', currentPrice: 'EGP 700', rating: 4.5, imageSrc: './hotel.jpg' },
     { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 800', currentPrice: 'EGP 650', rating: 4.2, imageSrc: './hotel.jpg' },
     { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 700', currentPrice: 'EGP 600', rating: 3.5, imageSrc: './hotel.jpg' },
     { title: 'Blue Scarab Pyramids View', location: 'Dahab', duration: '4 days 3 nights', date: '25 Dec 2023 to 29 Dec 2023', discountedPrice: 'EGP 600', currentPrice: 'EGP 500', rating: 4.8, imageSrc: './hotel.jpg' },
