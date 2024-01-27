@@ -10,7 +10,21 @@ body, html {
   
 }
 
+.vertical-line {
+  position: absolute;
+  background-color: orange;
+  width: 2px; /* Adjust the width as needed */
+  height: 25%;
+  top: 170px;
+}
 
+.left-line {
+  left: 0;
+}
+
+.right-line {
+  right: 0;
+}
 
 
 
